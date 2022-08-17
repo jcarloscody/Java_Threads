@@ -6,6 +6,7 @@ p2
 > **FORMAS**
 
 <img src="https://raw.githubusercontent.com/jcarloscody/Java_Threads/main/img/formasthreads.PNG">
+
 - **`exclusiva`**: único programa executando em uma CPU
 - **`concorrente`**: sendo constantemente interrompido para revezar a CPU com outros programas
 - **`paralela`**: ocupando uma CPU em um sistema com múltiplos processadores, e executando simultaneamente com outros programas, sem interrupções.
