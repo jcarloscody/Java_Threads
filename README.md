@@ -15,4 +15,45 @@ p2
 processadores que simula 2 CPUs para cada core. Portanto, em um computador quad-core (com 4
 CPUs físicas) o sistema enxerga 8 CPUs lógicas.
 
+<br/>
+<br/>
+
+#  Fundamentos de threads em Java
+## Class Thread
+-  Qualquer programa em Java possui pelo **menos um thread**, que é a sequência de instruções que começa e termina no método main() da aplicação.
+-  classe java.lang.Thread
+```
+Thread principal = Thread.currentThread();
+System.out.println("Nome do thread: " + principal.getName());
+System.out.println("Thread toString(): " + principal);
+```
+
+## A interface Runnable
+- A partir do thread main, podemos criar outros threads. Esses threads irão rodar em paralelo ou disputar a CPU com o thread principal.
+-  para executar threads novos, é preciso criar uma classe que implemente a interface **java.lang.Runnable**
+-  interface funcional
+```
+public class RunnableHelloWorld implements Runnable {
+ @Override
+ public void run() {
+    System.out.println("Hello world paralelo!");
+    System.out.println("Eu sou o thread: " + Thread.currentThread ().getName());
+ }
+}
+```
+- O método run() acima tem o mesmo papel que o main() em uma classe Java executável: ele contém o código que será chamado quando um thread for iniciado. 
+
+```
+public class ThreadExampleSync {
+ public static void main(String[] args) {
+      Runnable paralelo = new RunnableHelloWorld();
+      Thread t1 = new Thread(paralelo);
+      t1.start();
+      System.out.println("Thread principal: " + Thread.currentThread().getName());
+ }
+}
+```
+
+
+
 pag 17
