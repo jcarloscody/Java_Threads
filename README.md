@@ -54,6 +54,7 @@ public class ThreadExampleSync {
 }
 ```
 
+<img src="https://raw.githubusercontent.com/jcarloscody/Java_Threads/main/img/threads.PNG">
 
 
-pag 17
+pag 20
