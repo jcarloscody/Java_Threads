@@ -56,5 +56,67 @@ public class ThreadExampleSync {
 
 <img src="https://raw.githubusercontent.com/jcarloscody/Java_Threads/main/img/threads.PNG">
 
+<br/>
+<br/>
 
-pag 20
+outra forma...
+```
+public class ThreadExampleAsync5 {
+  static class HelloThread extends Thread {
+    @Override public void run() {
+      System.out.println("Hello world from thread " + this.getName());
+    }
+  }
+public static void main(String[] args) {
+    new HelloThread().start();
+    System.out.println("Thread principal: " + Thread.currentThread().getName());
+  }
+}
+```
+
+outra...
+
+```
+public class ThreadExampleAsync2 {
+ public static void main(String[] args) {
+  class HelloParalelo implements Runnable {
+    @Override public void run() {
+      System.out.println("Hello world paralelo!");
+    }
+  }
+  Thread t1 = new Thread(new HelloParalelo());
+  t1.start();
+  System.out.println("Thread principal: " + Thread.currentThread().getName());
+ }
+}
+```
+
+outra...
+
+```
+public class ThreadExampleAsync3 {
+  public static void main(String[] args) {
+    Thread t1 = new Thread(new Runnable() {
+    @Override public void run() {
+      System.out.println("Hello world paralelo!");
+    }
+    });
+    t1.start();
+    System.out.println("Thread principal: " + Thread.currentThread().getName());
+  }
+}
+```
+
+outra com lambda...
+
+```
+public class ThreadExampleAsync4 {
+ public static void main(String[] args) {
+  Thread t1 = new Thread(() -> System.out.println("Hello world paralelo!"));
+  t1.start();
+  System.out.println("Thread principal: " + Thread.currentThread().getName());
+ }
+}
+```
+
+pag 23
