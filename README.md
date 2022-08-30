@@ -118,5 +118,9 @@ public class ThreadExampleAsync4 {
  }
 }
 ```
+# Controle de threads
+- Interrupção de um thread: **interrupt()**
+- Pondo um thread para dormir: **Thread.sleep()**
+  - Um thread que está ocupando a CPU pode interromper sua execução temporariamente chamando o método estático **Thread.sleep(milissegundos)**
 
-pag 23
+pag 25
