@@ -123,4 +123,26 @@ public class ThreadExampleAsync4 {
 - Pondo um thread para dormir: **Thread.sleep()**
   - Um thread que está ocupando a CPU pode interromper sua execução temporariamente chamando o método estático **Thread.sleep(milissegundos)**
 
+
+```sh
+public class JoinExample {
+  public static void main(String[] args) {
+    Thread t1 = new Thread(new SimpleDelay(2000));
+    t1.start();
+    Thread t2 = new Thread(new SimpleDelay(5000));
+    t2.start();
+
+    System.out.println("Waiting for " + t1.getName());
+    try {
+      t1.join();
+    } catch (InterruptedException e) { ... }
+    System.out.println("Waiting for " + t2.getName());
+    try {
+      t2.join();
+    } catch (InterruptedException e) { ... }
+    System.out.println("Thread main is DONE!"); 
+  }
+}
+
+```
 pag 25
