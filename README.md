@@ -167,7 +167,7 @@ volatile). Há também uma API que fornece travas explícitas, sincronizadores e
 obtém uma trava exclusiva para um objeto, impedindo que ele seja acessível por outros threads
 enquanto um thread estiver executando o conteúdo do bloco.
 
-<img src="">
+<img src="https://raw.githubusercontent.com/jcarloscody/Java_Threads/main/img/synchronized.PNG">
 
 > Um bloco synchronized deve ser usado para garantir que um trecho de código produza
 resultados previsíveis independente de ser executado por um único thread ou simultaneamente por
