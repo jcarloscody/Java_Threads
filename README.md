@@ -1,4 +1,4 @@
-p2
+
 > **THREAD**
 - **fio - linha** -, é portanto uma **linha contínua de execução**, uma sequência de instruções que pode, potencialmente, executar em paralelo com outros threads.
 - Apesar de ser uma sequência contínua, um thread não precisa executar inteiro de uma vez. Ele pode ser interrompido quantas vezes for necessário, sempre continuando do ponto onde parou.
@@ -145,4 +145,30 @@ public class JoinExample {
 }
 
 ```
-pag 25
+
+# Comunicação entre threads e acesso exclusivo
+
+> Threads podem rodar paralelamente em uma única CPU (disputando slots de tempo alocados pelo sistema operacional) ou em CPUs diferentes executando ao mesmo tempo. Uma sequência de instruções que executa no mesmo thread é sempre sequencial, mas se dois ou mais threads têm acesso compartilhado aos mesmos dados, os resultados finais poderão ser inconsistentes.
+
+### Thread safety
+> Thread-safety é uma característica que representa a imunidade de um componente a problemas
+que podem surgir quando ele é usado em ambiente concorrente. Uma classe é thread-safe se
+continua a funcionar corretamente quando acessada por múltiplos threads.
+
+```
+Se uma variável pode ser acessada por múltiplos threads e não for imutável ela precisa usar sincronização sempre que for acessada, pois é necessário coordenar o acesso caso mais de um
+thread tentar mudar seu valor. Em Java há vários mecanismos nativos de sincronização: exclusão
+mútua (com a palavra-chave synchronized), sincronização de visibilidade (com a palavra-chave
+volatile). Há também uma API que fornece travas explícitas, sincronizadores e variáveis atômicas.
+```
+
+### Synchronized
+> Em Java a exclusão mútua pode ser obtida usando um bloco synchronized: um mecanismo que
+obtém uma trava exclusiva para um objeto, impedindo que ele seja acessível por outros threads
+enquanto um thread estiver executando o conteúdo do bloco.
+
+<img src="">
+
+> Um bloco synchronized deve ser usado para garantir que um trecho de código produza
+resultados previsíveis independente de ser executado por um único thread ou simultaneamente por
+muitos. 
